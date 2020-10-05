@@ -13,11 +13,10 @@ let paths = {
 		
 			// 'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
 			baseDir + '/libs/jquery/jquery-3.5.1.min.js',
-			baseDir + '/js/app.js', // app.js. Always at the end
 			baseDir + '/libs/slick/slick.min.js',
 			baseDir + '/libs/fullpage/fullpage.min.js',
 			'node_modules/fullpage.js/vendors/scrolloverflow.js',
-			// 'node_modules/fullpage.js/dist/fullpage.min.js'
+			baseDir + '/js/app.js', // app.js. Always at the endы
 		],
 		dest: baseDir + '/js',
 	},
