@@ -26,14 +26,16 @@
 	.title {
 		padding-top: 90px;
 	}
-	.products__slider-box {
-		padding-top: 0;
-	}
-	.products__slider-text {
-		bottom: auto;
-		left: auto;
-		top: -105px;
-		right: 0;
+	.products {
+		&__slider-box {
+			padding-top: 0;
+		}
+		&__slider-text {
+			bottom: auto;
+			left: auto;
+			top: -105px;
+			right: 0;
+		}
 	}
 	.benefits {
 		.title {
@@ -61,6 +63,25 @@
 		}
 		&__box-4 {
 			margin-top: 115px;
+		}
+	}
+	.questions {
+		.title {
+			padding-top: 40px;
+			margin-bottom: 20px;
+		}
+		&__item-title {
+			line-height: 22px;
+			font-size: 18px;
+			padding: 16px 10px 16px 30px;
+			&::after {
+				width: 60px;
+				height: 54px;
+				right: -60px;
+			}
+		}
+		&__item-text {
+			padding: 0 5px 40px 30px;
 		}
 	}
 }
@@ -140,8 +161,6 @@
 				display: block;
 				padding-top: 33px;
 				position: relative;
-				margin-bottom: auto;
-				margin-top: auto;
 				font-size: 16px;
 				line-height: 18px;
 				&::before {
@@ -149,7 +168,7 @@
 					position: absolute;
 					border-top: 1px solid rgba(#fff, .24);
 					top: 0;
-					left: 24px;
+					left: -24px;
 					right: 0;
 				}
 			}
@@ -200,6 +219,13 @@
 		&__phone {
 			display: none;
 		}
+		&__phone-menu {
+			display: block;
+			font-weight: 500;
+			font-size: 15px;
+			line-height: 17px;
+			color: #fff;
+		}
 	}
 	.menu__btn {
 		&--active {
@@ -216,11 +242,13 @@
 			}
 		}
 	}
-	.products__text {
-		padding-right: 15px;
-	}
-	.products__slider-box {
-		padding-right: 20px;
+	.products {
+		&__text {
+			padding-right: 15px;
+		}
+		&__slider-box {
+			padding-right: 20px;
+		}
 	}
 	.benefits {
 		&__item {
@@ -252,16 +280,18 @@
 		line-height: 42px;
 		margin-bottom: 35px;
 	}
-	.products__slider-text {
-		font-size: 20px;
-		line-height: 22px;
-		top: -85px;
-	}
-	.products__slider {
-		margin-left: auto;
-	}
-	.products__slider-box {
-		padding-bottom: 80px;
+	.products {
+		&__slider {
+			margin-left: auto;
+			&-text {
+				font-size: 20px;
+				line-height: 22px;
+				top: -85px;
+			}
+			&-box {
+				padding-bottom: 80px;
+			}
+		}
 	}
 	.specification {
 		&__box-1::before,
@@ -274,13 +304,38 @@
 }
 
 @media (max-width: 940px) {
-	.products__inner {
-		display: block;
+	.products {
+		&__inner {
+			display: block;
+		}
+		&__text {
+			padding-right: 0;
+			max-width: 100%;
+			margin-bottom: 140px;
+		}
 	}
-	.products__text {
-		padding-right: 0;
-		max-width: 100%;
-		margin-bottom: 140px;
+	.contacts {
+		&__form {
+			width: 100%;
+			margin-right: 0;
+			order: 1;
+		}
+		&__inner {
+			flex-wrap: wrap;
+		}
+
+	}
+}
+
+@media (max-width: 877px) {
+	.specification {
+		&__inner {
+			padding-left: 0;
+		}
+		&__box-4,
+		&__box-2 {
+			margin-top: 50px;
+		}
 	}
 }
 
@@ -301,35 +356,62 @@
 			width: 100%;
 		}
 	}
+	.specification {
+		&__inner {
+			display: block;
+		}
+		&__box {
+			width: 100%;
+		}
+		&__box-4,&__box-2 {
+			margin-top: 25px;
+		}
+		&__item--center {
+			margin-top: 0;
+		}
+	}
+	.questions {
+		&__items {
+			padding-right: 60px;
+		}
+		&__item-text {
+			padding: 0 15px 40px 30px;
+		}
+	}
+	.contacts__inner {
+		padding-left: 0;	
+	}
 }
 
 @media (max-width: 680px) {
-	.products__inner {
-		padding-left: 0;
-	}
-	.title {
-		padding-left: 0;
-		padding-top: 40px;
-		font-size: 26px;
-		line-height: 28px;
-		margin-bottom: 15px;
-	}
-	.products__text {
-		p {
-			margin-bottom: 10px;
+	.products {
+		&__inner {
+			padding-left: 0;
 		}
-	}
-	.products__slider {
-		max-width: 100%;
-		&::before {
-			width: 100%;
-			height: 100%;
+		.title {
+			padding-left: 0;
+			padding-top: 40px;
+			font-size: 26px;
+			line-height: 28px;
+			margin-bottom: 15px;
 		}
-		img {
-			width: 100%;
+		&__text {
+			p {
+				margin-bottom: 10px;
+			}
 		}
-		&-box {
-			padding-bottom: 60px;
+		&__slider {
+			max-width: 100%;
+			&::before {
+				width: 100%;
+				height: 100%;
+			}
+			img {
+				width: 100%;
+			}
+			&-box {
+				padding-bottom: 60px;
+			}
 		}
 	}
 }
@@ -360,6 +442,38 @@
 			&::before {
 				top: 8px;	
 			}
+		}
+	}
+}
+
+@media (max-width: 414px) {
+	.questions {
+		&__item-title {
+			padding: 15px 75px 15px 15px;
+			&::after {
+				right: 0;
+			}
+		}
+		&__items {
+			padding-right: 0;
+		}
+	}
+	.contacts__form-line {
+		display: block;
+	}
+	.contacts__form-input {
+		width: 100%;
+		margin-top: 10px;
+	}
+}
+
+@media (max-width: 400px) {
+	.contacts__social {
+		width: 100%;
+		&-list {
+			flex-direction: row;
+			height: auto;
+			justify-content: space-around;
 		}
 	}
 }
